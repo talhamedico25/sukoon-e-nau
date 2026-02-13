@@ -382,6 +382,29 @@ footer {
     text-decoration: underline;
 }
 
+/* --- Breathing Tool Animation --- */
+.breath-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin: 30px auto;
+    opacity: 0.6;
+    box-shadow: 0 0 20px var(--primary); /* Added a futuristic glow */
+    animation: breathe 8s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.4; 
+    }
+    50% { 
+        transform: scale(2.2); 
+        opacity: 0.8; 
+        box-shadow: 0 0 40px var(--primary); 
+    }
+}
 /* --- Modals --- */
 .modal-overlay {
     position: fixed;
