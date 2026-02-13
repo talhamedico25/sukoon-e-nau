@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Quiz Functions ---
 
     function initQuiz() {
+        if (window.breathInterval) clearInterval(window.breathInterval); // Stop the breathing timer
         score = 0;
         currentQ = 0;
         quizView.classList.remove('hidden');
@@ -83,6 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
             resultMessage.innerText = "شدید علامات۔ براہ کرم ڈاکٹر سے رجوع کریں۔ (Severe Depression)";
             crisisActions.classList.remove('hidden');
             resultView.classList.add('crisis-mode');
+        }
+        
+        // --- NEW: Breathing Tool Logic ---
+        const bText = document.getElementById('breath-text');
+        if (bText) {
+            // Clear any existing intervals if user retakes the quiz
+            if (window.breathInterval) clearInterval(window.breathInterval);
+            
+            let isIn = true;
+            window.breathInterval = setInterval(() => {
+                isIn = !isIn;
+                bText.innerText = isIn ? "BREATHE IN" : "BREATHE OUT";
+            }, 4000); 
         }
     }
 
