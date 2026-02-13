@@ -427,6 +427,26 @@
             <h1>Sukoon<span style="font-weight:200;">-e-Nau</span></h1>
             <p style="letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); font-size: 0.8rem;">Future of Mental Health</p>
         </header>
+        
+        <section class="container" style="margin-bottom: 40px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: var(--shadow);">
+            <div style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 10px;">01</div>
+            <h4 style="text-transform: uppercase; margin-bottom: 10px;">Assess</h4>
+            <p style="font-size: 0.85rem; color: var(--text-light);">Answer 9 clinically validated questions about your last 2 weeks.</p>
+        </div>
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: var(--shadow);">
+            <div style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 10px;">02</div>
+            <h4 style="text-transform: uppercase; margin-bottom: 10px;">Analyze</h4>
+            <p style="font-size: 0.85rem; color: var(--text-light);">Our system calculates your score based on PHQ-9 standards.</p>
+        </div>
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: var(--shadow);">
+            <div style="font-size: 1.5rem; color: var(--primary); font-weight: bold; margin-bottom: 10px;">03</div>
+            <h4 style="text-transform: uppercase; margin-bottom: 10px;">Act</h4>
+            <p style="font-size: 0.85rem; color: var(--text-light);">Get instant guidance, breathing tools, or emergency contacts.</p>
+        </div>
+    </div>
+</section>
 
         <!-- MAIN APP INTERFACE -->
         <main>
@@ -467,6 +487,12 @@
                         <a href="tel:1122" class="btn crisis-btn urdu-text">فوری مدد (Helpline)</a>
                         <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-light);">Please seek professional help immediately.</p>
                     </div>
+
+                    <div id="breathing-space" style="margin-top: 30px; padding: 20px; border-top: 1px solid #eee;">
+    <p class="urdu-text" style="font-size: 1.2rem; margin-bottom: 15px;">سکون محسوس کرنے کے لیے دائرے کے ساتھ سانس لیں</p>
+    <div class="breath-circle"></div>
+    <p id="breath-text" style="text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; color: var(--primary);">Breathe In</p>
+</div>
 
                     <button class="btn" style="background:var(--accent); color:white; padding:10px 30px; margin-top:30px;" onclick="resetQuiz()">Retake Assessment</button>
                 </div>
