@@ -66,25 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showResults() {
-        quizView.classList.add('hidden');
-        resultView.classList.remove('hidden');
-        progressBar.style.width = '100%';
+       quizView.classList.add('hidden');
+    resultView.classList.remove('hidden');
+    progressBar.style.width = '100%';
 
-        scoreDisplay.innerText = score;
+    scoreDisplay.innerText = score;
 
-        // Severity Logic
-        if (score <= 4) {
-            resultMessage.innerText = "آپ کا اسکور نارمل ہے۔ (Minimal Depression)";
-        } else if (score <= 9) {
-            resultMessage.innerText = "ہلکی علامات۔ (Mild Depression)";
-        } else if (score <= 14) {
-            resultMessage.innerText = "درمیانے درجے کی علامات۔ (Moderate Depression)";
-        } else {
-            // High Urgency
-            resultMessage.innerText = "شدید علامات۔ براہ کرم ڈاکٹر سے رجوع کریں۔ (Severe Depression)";
-            crisisActions.classList.remove('hidden');
-            resultView.classList.add('crisis-mode');
-        }
+    // 1. Target the suggestions box
+    const suggestionsBox = document.getElementById('suggestions-box');
+
+    // 2. Updated Severity Logic with Suggestions
+    if (score <= 4) {
+        resultMessage.innerText = "آپ کا اسکور نارمل ہے۔ (Minimal Depression)";
+        // Suggestion for Minimal
+        suggestionsBox.innerText = "آپ کی ذہنی صحت مستحکم ہے۔ اچھی نیند اور ورزش کو اپنی روٹین کا حصہ بنائیں۔";
+    } else if (score <= 9) {
+        resultMessage.innerText = "ہلکی علامات۔ (Mild Depression)";
+        // Suggestion for Mild
+        suggestionsBox.innerText = "تھوڑی سی خود نگہداری (Self-care) اور پسندیدہ مشاغل آپ کو بہتر محسوس کروا سکتے ہیں۔";
+    } else if (score <= 14) {
+        resultMessage.innerText = "درمیانے درجے کی علامات۔ (Moderate Depression)";
+        // Suggestion for Moderate
+        suggestionsBox.innerText = "یہ علامات روزمرہ زندگی کو متاثر کر سکتی ہیں۔ کسی تھراپسٹ سے بات کرنا مددگار ثابت ہوگا۔";
+    } else {
+        // High Urgency
+        resultMessage.innerText = "شدید علامات۔ (Severe Depression)";
+        // Suggestion for Severe
+        suggestionsBox.innerText = "براہ کرم سستی نہ کریں اور فوری طور پر کسی ماہرِ نفسیات یا نیچے دی گئی ہیلپ لائنز سے رابطہ کریں۔";
+        crisisActions.classList.remove('hidden');
+        resultView.classList.add('crisis-mode');
+    }
         
         // --- NEW: Breathing Tool Logic ---
         const bText = document.getElementById('breath-text');
