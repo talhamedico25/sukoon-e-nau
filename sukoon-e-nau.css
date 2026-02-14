@@ -408,6 +408,29 @@ footer {
         filter: blur(0px);
         text-shadow: 0 0 25px var(--primary);
     }
+    /* --- 2. VECTOR FLOWCHART (ROADMAP) --- */
+/* This adds the connecting line between the roadmap steps on Desktop */
+@media (min-width: 768px) {
+    .roadmap-section > div {
+        position: relative;
+    }
+    
+    .roadmap-section > div::before {
+        content: "";
+        position: absolute;
+        top: 25px; /* Aligns with the center of the 01, 02, 03 circles */
+        left: 50px;
+        right: 50px;
+        height: 2px;
+        border-top: 2px dashed #ddd; /* The "Vector" dashed line */
+        z-index: 0;
+    }
+    
+    /* Ensures the numbers sit above the dashed line */
+    .roadmap-section div > div {
+        position: relative;
+        z-index: 1;
+    }
 }
 /* --- Modals --- */
 .modal-overlay {
