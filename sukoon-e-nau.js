@@ -1,3 +1,24 @@
+function copyResults() {
+    const scoreVal = document.getElementById('score-display').innerText;
+    const msgVal = document.getElementById('result-message').innerText;
+    const summary = `Sukoon-e-Nau Assessment\nScore: ${scoreVal}\nStatus: ${msgVal}\nDate: ${new Date().toLocaleDateString()}`;
+    
+    navigator.clipboard.writeText(summary).then(() => {
+        // Dynamic Feedback: Change button text temporarily
+        const btn = document.querySelector('.copy-btn') || event.target;
+        const originalText = btn.innerText;
+        btn.innerText = "Copied! ✅";
+        btn.style.backgroundColor = "#4caf50";
+        
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = ""; // Reset to original CSS
+        }, 2000);
+    }).catch(err => {
+        alert("Could not copy. Please take a screenshot.");
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- Data (Urdu PHQ-9) ---
@@ -109,15 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 bText.innerText = isIn ? "BREATHE IN" : "BREATHE OUT";
             }, 4000); 
         }
-    }
-    function copyResults() {
-        const scoreVal = document.getElementById('score-display').innerText;
-        const msgVal = document.getElementById('result-message').innerText;
-        const summary = `Sukoon-e-Nau Assessment\nScore: ${scoreVal}\nStatus: ${msgVal}\nDate: ${new Date().toLocaleDateString()}`;
-        
-        navigator.clipboard.writeText(summary).then(() => {
-            alert("Results copied! You can now paste this to your doctor.");
-        });
     }
 
     // --- Event Listeners ---
