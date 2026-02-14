@@ -110,6 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 4000); 
         }
     }
+    function copyResults() {
+        const scoreVal = document.getElementById('score-display').innerText;
+        const msgVal = document.getElementById('result-message').innerText;
+        const summary = `Sukoon-e-Nau Assessment\nScore: ${scoreVal}\nStatus: ${msgVal}\nDate: ${new Date().toLocaleDateString()}`;
+        
+        navigator.clipboard.writeText(summary).then(() => {
+            alert("Results copied! You can now paste this to your doctor.");
+        });
+    }
 
     // --- Event Listeners ---
     
