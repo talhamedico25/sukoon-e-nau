@@ -64,26 +64,42 @@
             letter-spacing: 1px;
         }
 
-       <header>
-    <div class="container header-flex">
-        <svg width="55" height="55" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0px 4px 8px rgba(0, 191, 165, 0.3)); flex-shrink: 0;">
-            <circle cx="50" cy="50" r="45" stroke="var(--primary)" stroke-width="2" stroke-dasharray="6 4" opacity="0.3" />
-            <path d="M50 82C50 82 18 62 18 38C18 24 32 16 50 34C68 16 82 24 82 38C82 62 50 82 50 82Z" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M28 45H36L42 28L58 62L64 45H72" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
-            </path>
-        </svg>
+       /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
 
-        <div style="display: flex; flex-direction: column; text-align: left;">
-            <h1 style="font-family: var(--font-en); font-size: 1.8rem; font-weight: 700; color: var(--accent); letter-spacing: 2px; line-height: 1; margin: 0; text-transform: uppercase;">
-                SUKOON<span style="color: var(--primary);">.</span>E<span style="color: var(--primary);">.</span>NAU
-            </h1>
-            <p style="font-family: var(--font-en); letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); font-size: 0.65rem; margin: 4px 0 0 0; font-weight: 600;">
-                A Future of Mental Wellness
-            </p>
-        </div>
-    </div>
-</header>
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .brand-logo svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h1 span {
+            color: var(--primary);
+        }
         /* --- Screening Tool Section --- */
         .card {
             background: var(--surface);
