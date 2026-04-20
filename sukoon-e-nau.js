@@ -154,33 +154,23 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
-
-    // --- Page Switching Logic ---
-    window.showPage = function(pageId, event) {
-        // 1. Hide all page sections
-        document.querySelectorAll('.page-section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // 2. Remove 'active' status from all nav links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-        });
-
-        // 3. Show the requested page and highlight its link
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-            targetPage.classList.add('active');
-        }
-
-        // 4. Highlight the clicked nav link
-        if (event && event.currentTarget) {
-            event.currentTarget.classList.add('active');
-        }
-
-        // 5. Scroll to top for a smooth experience
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
+    
     // Initialize on load
     initQuiz();
+    // --- Global Switching Function ---
+    window.showPage = function(pageId, event) {
+        // Hide all pages
+        document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+        // Deactivate all links
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        
+        // Show current page
+        const target = document.getElementById(pageId);
+        if(target) target.classList.add('active');
+        
+        // Activate current link
+        if(event) event.currentTarget.classList.add('active');
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
 });
