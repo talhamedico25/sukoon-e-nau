@@ -415,7 +415,16 @@
 <body>
 
     <div class="container">
+         <nav class="main-nav">
+            <div class="nav-container">
+                <span class="nav-link urdu-text active" onclick="showPage('home', event)">ہوم</span>
+                <span class="nav-link urdu-text" onclick="showPage('learn', event)">سیکھئے</span>
+                <span class="nav-link urdu-text" onclick="showPage('research', event)">تحقیق</span>
+                <span class="nav-link urdu-text" onclick="showPage('feedback', event)">رائے</span>
+            </div>
+        </nav>
         <!-- HEADER -->
+        <div id="home" class="page-section active">
         <header>
             <div class="brand-logo">
                 <!-- Abstract Brain Icon SVG -->
@@ -749,7 +758,42 @@
         </div>
     </div>
 </section>
+</div>
+        <div id="learn" class="page-section">
+    <div class="card">
+        <h2 class="section-title urdu-text" style="font-size: 2rem;">سیکھئے: سکونِ نو</h2>
+        <p class="urdu-text" style="text-align: center; color: var(--text-light);">طبی ماہرین کے ذریعے تیار کردہ ذہنی صحت کے مستند مضامین</p>
+        
+        <div class="options-grid" style="margin-top: 20px;">
+            <a href="#" class="option-btn urdu-text" style="text-decoration: none; font-size: 1.1rem;">ذہنی صحت 101 - طبی ماہرین کی رائے</a>
+            <a href="#" class="option-btn urdu-text" style="text-decoration: none; font-size: 1.1rem;">اینگزائٹی (بے چینی) کو سمجھنا</a>
+            <a href="#" class="option-btn urdu-text" style="text-decoration: none; font-size: 1.1rem;">ڈیپریشن اور ہماری سوسائٹی</a>
+        </div>
+    </div>
+</div>
 
+<div id="research" class="page-section">
+    <div class="card">
+        <h2 class="section-title urdu-text" style="font-size: 2rem;">جدید تحقیق اور حقائق</h2>
+        <div class="sub-text urdu-text" style="margin-bottom: 20px; text-align: center;">ذہنی صحت کے بارے میں غلط فہمیوں کا خاتمہ</div>
+        
+        <div class="urdu-text" style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-right: 5px solid var(--primary);">
+            <strong style="color: var(--danger);">غلط فہمی:</strong> ذہنی بیماری کمزوری کی نشانی ہے۔<br>
+            <strong style="color: var(--primary);">حقیقت:</strong> ذہنی صحت کے مسائل حیاتیاتی اور نفسیاتی طبی حالات ہیں، جن کا علاج ممکن ہے۔
+        </div>
+    </div>
+</div>
+
+<div id="feedback" class="page-section">
+    <div class="card">
+        <h2 class="section-title urdu-text" style="font-size: 2rem;">آپ کی رائے</h2>
+        <p class="urdu-text" style="text-align: center; margin-bottom: 15px;">ہم اس پلیٹ فارم کو کیسے بہتر بنا سکتے ہیں؟</p>
+        
+        <textarea class="urdu-text" placeholder="یہاں لکھیں..." style="width:100%; border:2px solid #ECEFF1; border-radius:12px; padding:15px; height:120px; text-align: right;"></textarea>
+        
+        <button class="btn urdu-text" style="background:var(--primary); color:white; padding:12px; width:100%; margin-top:15px; font-size: 1.2rem;">ارسال کریں (Submit)</button>
+    </div>
+</div>
         <!-- MAIN APP INTERFACE -->
         <main>
             <div style="margin: 0 auto 20px auto; padding: 10px 20px; background: #f0fdfa; border-radius: 50px; display: flex; align-items: center; gap: 10px; border: 1px solid #ccf2ed; width: fit-content;">
