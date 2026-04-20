@@ -157,20 +157,34 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize on load
     initQuiz();
-    // --- Global Switching Function ---
+    // This MUST be inside the DOMContentLoaded block but using 'window.'
     window.showPage = function(pageId, event) {
-        // Hide all pages
-        document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-        // Deactivate all links
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        
-        // Show current page
+        // Prevent default link behavior if any
+        if (event) event.preventDefault();
+
+        // 1. Hide all page sections
+        document.querySelectorAll('.page-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // 2. Remove active class from all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // 3. Show the target section
         const target = document.getElementById(pageId);
-        if(target) target.classList.add('active');
-        
-        // Activate current link
-        if(event) event.currentTarget.classList.add('active');
-        
+        if (target) {
+            target.classList.add('active');
+        } else {
+            console.error("Page ID not found:", pageId);
+        }
+
+        // 4. Highlight the current link
+        if (event && event.currentTarget) {
+            event.currentTarget.classList.add('active');
+        }
+
+        // 5. Scroll to top
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
-});
